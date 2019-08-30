@@ -15,5 +15,20 @@ function addEmployee(){
     let title = $('#title').val();
     let annualSalary = $('#annualSalary').val();
 
-    console.log(firstName);
+    let newEmployee = {
+        firstName: firstName,
+        lastName: lastName,
+        id: id,
+        title: title,
+        annualSalary: annualSalary,
+    };
+
+    employeeList.push(newEmployee);
+    $('#firstName').val('');
+    $('#lastName').val('');
+    $('#id').val('');
+    $('#title').val('');
+    $('#annualSalary').val('');
+
+    console.log(employeeList);
 }
