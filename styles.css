@@ -1,9 +1,35 @@
-body{
-    background-color: aquamarine;
+
+body {
+    font-family: "Helvetica", Arial, sans-serif;
+    background-color:#f7f9fa;
+    border: 1px solid black;
+}
+
+h1 {
+    text-align: center;
+    background-color: #696a6b;
+    color:#f7f9fa;
+    padding: 25px;
+    margin: 0 auto;
 }
 
 #container {
     border: 1px solid black;
+    padding: 25px;
+}
+input {
+    padding: 5px;
+    display: inline-block;
+    border: 1px solid black;
+    margin: 5px;
+}
+
+#submitBtn {
+    padding: 5px 10px;
+    background-color:#b2b5b8;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin: 15px 5px;
 }
 
 table {
