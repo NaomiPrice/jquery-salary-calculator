@@ -3,6 +3,7 @@ $(document).ready(onReady);
 
 function onReady(){
     $('#submitBtn').on('click', addEmployee);
+    calculateTotal();
 }
 
 let employeeList = [];
@@ -25,6 +26,7 @@ function addEmployee(){
     };
     //push object to array
     employeeList.push(newEmployee);
+    //clear inputs
     $('#firstName').val('');
     $('#lastName').val('');
     $('#id').val('');
@@ -32,6 +34,8 @@ function addEmployee(){
     $('#annualSalary').val('');
 
     displayEmployee();
+
+    calculateTotal();
 }
 
 function displayEmployee(){
@@ -52,7 +56,16 @@ function displayEmployee(){
 }// end displayEmployee function
 
 function calculateTotal (){
-    //use totals from annual salaries to calculate a total
+    //use totals from annual salaries to calculate a total monthly costs
+    let totalAnnualCosts = 0; 
+    employeeList.forEach( function(employee){
+        totalAnnualCosts += Number(employee.annualSalary);
+    });
+    const monthlyCosts = Number(totalAnnualCosts / 12);
+    const monthlyCostsRound = Number.parseFloat(monthlyCosts).toFixed(2);
+    $('#totalMonthlyOut').empty();
+    $('#totalMonthlyOut').append(monthlyCostsRound);
+
 }
 
 //add delete button
