@@ -5,7 +5,7 @@ function onReady() {
     $('#submitBtn').on('click', addEmployee);
     calculateTotal();
     $('#empIn').on('click', '.delete', deleteEmployee)
-    addSampleData();
+    //addSampleData(); //for testing
 }
 
 let employeeList = [];
@@ -17,6 +17,11 @@ function addEmployee() {
     let id = $('#id').val();
     let title = $('#title').val();
     let annualSalary = $('#annualSalary').val();
+
+    if (firstName === '' || lastName === '' || id === '' || title === '' || annualSalary === '') {
+        return alert('Please fill out all input fields');
+    }
+
     //create opject from user input
     let newEmployee = {
         firstName: firstName,
@@ -86,31 +91,31 @@ function deleteEmployee() {
     calculateTotal();
 }// end deleteEmp function
 
-function addSampleData(){
-    employeeList.push(
-        {
-        annualSalary: "100000",
-        annualSalaryFormatted: "$100,000.00",
-        firstName: "Naomi",
-        id: "1234",
-        lastName: "Price",
-        title: "Mrs"
-        },
-        {
-        annualSalary: "100000",
-        annualSalaryFormatted: "$100,000.00",
-        firstName: "Arthur",
-        id: "6789",
-        lastName: "Price",
-        title: "Child" 
-        },
-        {
-        annualSalary: "20000",
-        annualSalaryFormatted: "$20,000.00",
-        firstName: "Misky",
-        id: "3958",
-        lastName: "Price",
-        title: "Awesome"  
-        }
-    );
-}// end addSampleData function
+// function addSampleData(){
+//     employeeList.push(
+//         {
+//         annualSalary: "100000",
+//         annualSalaryFormatted: "$100,000.00",
+//         firstName: "Naomi",
+//         id: "1234",
+//         lastName: "Price",
+//         title: "Mrs"
+//         },
+//         {
+//         annualSalary: "100000",
+//         annualSalaryFormatted: "$100,000.00",
+//         firstName: "Arthur",
+//         id: "6789",
+//         lastName: "Price",
+//         title: "Child" 
+//         },
+//         {
+//         annualSalary: "20000",
+//         annualSalaryFormatted: "$20,000.00",
+//         firstName: "Misky",
+//         id: "3958",
+//         lastName: "Price",
+//         title: "Awesome"  
+//         }
+//     );
+// }// end addSampleData function
